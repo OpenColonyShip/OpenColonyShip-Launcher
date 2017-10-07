@@ -5,27 +5,110 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>Silo for OpenColonyShip</title>
         <link rel="stylesheet" href="node_modules/material-components-web/dist/material-components-web.css">
+        <style>
+            @font-face {
+                font-family: 'Material Icons';
+                font-style: normal;
+                font-weight: 400;
+                src: local('Material Icons'),
+                local('MaterialIcons-Regular'),
+                url(node_modules/material-design-icons/iconfont/MaterialIcons-Regular.woff2) format('woff2'),
+                url(node_modules/material-design-icons/iconfont/MaterialIcons-Regular.woff) format('woff'),
+                url(node_modules/material-design-icons/iconfont/MaterialIcons-Regular.ttf) format('truetype');
+            }
+
+            .material-icons {
+                font-family: 'Material Icons';
+                font-weight: normal;
+                font-style: normal;
+                font-size: 24px;  /* Preferred icon size */
+                display: inline-block;
+                line-height: 1;
+                text-transform: none;
+                letter-spacing: normal;
+                word-wrap: normal;
+                white-space: nowrap;
+                direction: ltr;
+
+                /* Support for all WebKit browsers. */
+                -webkit-font-smoothing: antialiased;
+                /* Support for Safari and Chrome. */
+                text-rendering: optimizeLegibility;
+            }
+
+            :root {
+                --mdc-theme-primary: #0e4ead;
+            }
+
+            body {
+                margin: 0;
+            }
+        </style>
     </head>
-
     <body>
-        <h2 class="mdc-typography--display2">This is heavily in development. In that it's just a screen with some text.</h2>
-        <!-- All of the Node.js APIs are available in this renderer process. -->
-        We are using Node.js <script>document.write(process.versions.node)</script>,
-        Chromium <script>document.write(process.versions.chrome)</script>,
-        and Electron <script>document.write(process.versions.electron)</script>.
+        <header class="mdc-toolbar">
+            <div class="mdc-toolbar__row">
+                <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+                    <a href="#" class="material-icons mdc-toolbar__icon--menu">menu</a>
+                        <span class="mdc-toolbar__title">Launcher for OpenColonyShip</span>
+                </section>
+            </div>
+        </header>
+        <main>
+            <h1 class="mdc-typography--display1">Tell us about yourself!</h1>
 
-        <br /><br />
+            <form action="#" id="greeting-form">
+                <div>
+                    <div class="mdc-form-field">
+                        <div class="mdc-textfield" data-mdc-auto-init="MDCTextfield">
+                            <input id="firstname" type="text" class="mdc-textfield__input">
+                            <label for="firstname" class="mdc-textfield__label">
+                                First Name
+                            </label>
+                        </div>
+                    </div>
 
-        <button type="button" class="mdc-button mdc-button--raised mdc-button--primary">
-            Press Me!
-        </button>
+                    <div class="mdc-form-field">
+                        <div class="mdc-textfield" data-mdc-auto-init="MDCTextfield">
+                            <input id="lastname" type="text" class="mdc-textfield__input">
+                            <label for="lastname" class="mdc-textfield__label">
+                                Last Name
+                            </label>
+                        </div>
+                    </div>
+                </div>
 
-        <script src="node_modules/material-components-web/dist/material-components-web.js"></script>
+                <button type="submit" class="mdc-button mdc-button--raised mdc-button--primary mdc-ripple-surface" data-mdc-auto-init="MDCRipple">
+                    Print Greeting
+                </button>
+            </form>
+
+            <!-- The p element below is where we'll eventually output our greeting -->
+            <p class="mdc-typography--headline" id="greeting"></p>
+        </main>
+
+        <script src="node_modules/material-components-web/dist/material-components-web.min.js"></script>
+        <script>window.mdc.autoInit();</script>
         <script>
-            // Initiate material-components-web
-            mdc.autoInit()
-            // You can also require other files to run in this process
-            require('./renderer.js')
+            document.getElementById('greeting-form').addEventListener('submit', function(evt) {
+                evt.preventDefault();
+                var firstname = evt.target.elements.firstname.value;
+                var lastname = evt.target.elements.lastname.value;
+                var greeting = 'Hello';
+                if (firstname || lastname) {
+                    greeting += ', ';
+                    if (firstname && lastname) {
+                        greeting += firstname + ' ' + lastname;
+                    } else if (lastname) {
+                        greeting += 'Mx. ' + lastname;
+                    } else {
+                        greeting += firstname;
+                    }
+                }
+                greeting += '!';
+
+                document.getElementById('greeting').textContent = greeting;
+            });
         </script>
     </body>
 </html>
