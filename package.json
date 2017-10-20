@@ -4,7 +4,8 @@
   "description": "The launcher for OpenColonyShip",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "test": "node test/all.js"
   },
   "repository": "https://github.com/OpenColonyShip/OpenColonyShip-Launcher",
   "keywords": [
@@ -23,6 +24,7 @@
     "electron": "~1.7.8"
   },
   "dependencies": {
-    "material-components-web": "^0.22.0"
+    "material-components-web": "^0.22.0",
+    "test": ">=0.0.5"
   }
 }
