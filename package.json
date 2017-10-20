@@ -21,7 +21,8 @@
   "author": "OpenColonyShip",
   "license": "MIT",
   "devDependencies": {
-    "electron": "~1.7.8"
+    "electron": "~1.7.8",
+    "test": ">=0.0.5"
   },
   "dependencies": {
     "material-components-web": "^0.22.0",
