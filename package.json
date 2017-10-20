@@ -24,7 +24,7 @@
     "electron": "~1.7.8"
   },
   "dependencies": {
-    "material-components-web": "^0.22.0",
+    "material-design-lite": "",
     "test": ">=0.0.5"
   }
 }
