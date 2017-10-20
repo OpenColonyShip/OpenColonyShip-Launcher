@@ -1,4 +1,4 @@
-# OpenColonyShip-Launcher
+# OpenColonyShip-Launcher [![Build Status](https://travis-ci.org/OpenColonyShip/OpenColonyShip-Launcher.svg?branch=master)](https://travis-ci.org/OpenColonyShip/OpenColonyShip-Launcher)
 
 The launcher for OpenColonyShip.
 
