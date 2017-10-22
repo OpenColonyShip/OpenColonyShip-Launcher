@@ -1,29 +1,29 @@
 {
-  "name": "OpenColonyShip-Launcher",
-  "version": "1.0.0",
-  "description": "The launcher for OpenColonyShip",
-  "main": "main.js",
-  "scripts": {
-    "start": "electron .",
-    "test": "node test/all.js"
-  },
-  "repository": "https://github.com/OpenColonyShip/OpenColonyShip-Launcher",
-  "keywords": [
-    "space",
-    "game",
-    "game-development",
-    "3d",
-    "3d-models",
-    "science",
-    "sci-fi",
-    "sci-fi-game"
-  ],
-  "author": "OpenColonyShip",
-  "license": "MIT",
-  "devDependencies": {
-    "electron": "~1.7.8"
-  },
-  "dependencies": {
-    "test": ">=0.0.5"
-  }
+    "name": "OpenColonyShip-Launcher",
+    "version": "1.0.0",
+    "description": "The launcher for OpenColonyShip",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "test": "node test/all.js"
+    },
+    "repository": "https://github.com/OpenColonyShip/OpenColonyShip-Launcher",
+    "keywords": [
+        "space",
+        "game",
+        "game-development",
+        "3d",
+        "3d-models",
+        "science",
+        "sci-fi",
+        "sci-fi-game"
+    ],
+    "author": "OpenColonyShip",
+    "license": "MIT",
+    "devDependencies": {
+        "electron": "~1.7.8"
+    },
+    "dependencies": {
+        "test": ">=0.0.5"
+    }
 }
